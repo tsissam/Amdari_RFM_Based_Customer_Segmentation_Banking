@@ -5,16 +5,24 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+# Avant (version de base)
+st.dataframe(filtered_df)
+
+# Après (version responsive)
+#st.dataframe(filtered_df, use_container_width=True)
+st.data_editor(filtered_df, use_container_width=True, height=400)
+
 # Loading data
 @st.cache_data
 def load_data():
     df = pd.read_csv('outputs/rfm_final.csv')
     return df
-
+ 
 df = load_data()
 
 # Titre
 st.title("RFM Customer Segmentation Dashboard")
+st.markdown("🎉 **Welcome to the RFM Dashboard for Retail Banking!**")
 
 # Sidebar - filters
 segment = st.sidebar.multiselect("Select Segments(s):", options=df['Cluster_label'].unique(), default = df['Cluster_label'].unique())
