@@ -28,8 +28,8 @@ filtered_df = df[df['Cluster_label'].isin(segment)]
 st.dataframe(filtered_df)
 
 # Après (version responsive)
-#st.dataframe(filtered_df, use_container_width=True)
-st.data_editor(filtered_df, use_container_width=True, height=400)
+st.dataframe(filtered_df, use_container_width=True)
+#st.data_editor(filtered_df, use_container_width=True, height=400)
 # fin ajout
 
 #KPIs
