@@ -23,15 +23,6 @@ segment = st.sidebar.multiselect("Select Segments(s):", options=df['Cluster_labe
 
 filtered_df = df[df['Cluster_label'].isin(segment)]
 
-# Ajout
-# Avant (version de base)
-st.dataframe(filtered_df)
-
-# Après (version responsive)
-st.dataframe(filtered_df, use_container_width=True)
-#st.data_editor(filtered_df, use_container_width=True, height=400)
-# fin ajout
-
 #KPIs
 st.metric("📦 Total Customers", len(filtered_df))
 st.metric("💰 Total Monetary Value", int(filtered_df['Monetary'].sum()))
@@ -48,4 +39,6 @@ st.dataframe(avg_rfm.round(2))
 
 # Raw Data
 st.subheader("📄 Customer Data")
-st.dataframe(filtered_df)
+#st.dataframe(filtered_df)
+st.dataframe(filtered_df, use_container_width=True)
+#st.data_editor(filtered_df, use_container_width=True, height=400)
