@@ -1,0 +1,5 @@
+dataset/bank_data_C_cleaned.csv
+dataset/bank_data_C_cleanedv2.csv
+outputs/rfm_final.csv
+outputs/rfm_table.csv
+outputs/rfm_table2.csv
