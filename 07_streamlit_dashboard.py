@@ -5,12 +5,6 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Avant (version de base)
-st.dataframe(filtered_df)
-
-# Après (version responsive)
-#st.dataframe(filtered_df, use_container_width=True)
-st.data_editor(filtered_df, use_container_width=True, height=400)
 
 # Loading data
 @st.cache_data
@@ -28,6 +22,15 @@ st.markdown("🎉 **Welcome to the RFM Dashboard for Retail Banking!**")
 segment = st.sidebar.multiselect("Select Segments(s):", options=df['Cluster_label'].unique(), default = df['Cluster_label'].unique())
 
 filtered_df = df[df['Cluster_label'].isin(segment)]
+
+# Ajout
+# Avant (version de base)
+st.dataframe(filtered_df)
+
+# Après (version responsive)
+#st.dataframe(filtered_df, use_container_width=True)
+st.data_editor(filtered_df, use_container_width=True, height=400)
+# fin ajout
 
 #KPIs
 st.metric("📦 Total Customers", len(filtered_df))
